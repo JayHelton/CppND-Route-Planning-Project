@@ -57,7 +57,7 @@ RouteModel::Node &RouteModel::FindClosestNode(float x, float y)
 	for(auto &road : Roads())
 	{
 		// Skip over any Footpaths, we only want roads
-		if(road.type == Model::Road::Footway) continue;
+		if(road.type == Model::Road::Footway){
 
 		// Loop through the index of each node along each road
 		for(auto node_index : Ways()[road.way].nodes)
@@ -70,6 +70,8 @@ RouteModel::Node &RouteModel::FindClosestNode(float x, float y)
 				min_distance = dist;
 			}
 		}
+		}
+		
 	}
 
 	return SNodes()[closest_index];
