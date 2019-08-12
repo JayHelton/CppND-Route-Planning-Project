@@ -29,9 +29,9 @@ class RouteModel : public Model {
         RouteModel::Node * FindNeighbor(std::vector<int>);
     };
     
-    std::vector<Node> path; // This variable will eventually store the path that is found by the A* search.
+    std::vector<Node> path; 
 
-    auto &GetNodeToRoadMap() { return node_to_road; } // Used for testing functionality of node_to_road
+    auto &GetNodeToRoadMap() { return node_to_road; } 
     auto &SNodes() { return m_Nodes; };
     
     Node &FindClosestNode(float, float);
@@ -41,5 +41,5 @@ class RouteModel : public Model {
     std::vector<Node> m_Nodes;
     std::unordered_map<int, std::vector<const Model::Road *> > node_to_road;
     
-    void CreateNodeToRoadHashmap();
+    void CreateNodeToRoadHashMap();
 };

@@ -55,7 +55,7 @@ int main(int argc, const char **argv)
     // RoutePlanner object below.
 
     float start_x, start_y, end_x, end_y;
-
+/*
     std::cout<<"The map coordinates begin at (0,0) in the lower left corner, and end at (100,100= in the upper right." << "\n";
     std::cout<<"Enter a start x between 0 and 100 : ";
     std::cin>>start_x;
@@ -69,12 +69,13 @@ int main(int argc, const char **argv)
     std::cout<<"Enter a end y between 0 and 100 : ";
     std::cin>>end_y;
 
-
+*/
     // Build Model.
     RouteModel model{osm_data};
 
     // Perform search and render results.
-    RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
+    //RoutePlanner route_planner{model, start_x, start_y, end_x, end_y};
+    RoutePlanner route_planner{model, 10.0,10.0,90.0,90.0};
 
     route_planner.AStarSearch();
     //float distance;
